@@ -2,6 +2,7 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithPopup,
+  signInWithRedirect,
 } from "firebase/auth";
 import React, { useEffect } from "react";
 import { auth } from "../firebaseConfig";
@@ -29,12 +30,12 @@ export default function Login() {
     };
   }, []);
   const googleSignin = () => {
-    signInWithPopup(auth, provider)
+    signInWithRedirect(auth, provider)
       .then((result) => {
         console.log(result);
       })
       .catch((err) => {
-        console.log(err.message);
+        alert(err.message);
       });
   };
   return (
