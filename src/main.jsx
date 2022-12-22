@@ -3,14 +3,14 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./views/Login";
-import Chat from "./views/Chat";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import Home from "./views/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Chat />,
+    element: <Home />,
   },
   {
     path: "/login",
