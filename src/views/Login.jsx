@@ -1,31 +1,28 @@
-import { useState } from "react";
+import React from "react";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function Login() {
   return (
     <div className="relative py-16">
       <div className="container relative m-auto px-6 text-gray-500 md:px-12 xl:px-40">
         <div className="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
-          <div className="rounded-3xl border border-gray-100 dark:border-gray-700 bg-white shadow-2xl shadow-gray-600/10">
-            <div className="p-8 py-12 sm:p-16">
+          <div className="rounded-3xl border border-gray-100bg-white shadow-2xl shadow-gray-600/10">
+            <div className="p-8 py-3 sm:p-16">
               <div className="space-y-4">
                 <img
-                  src="images/icon.svg"
+                  src="https://the-coding-montana.vercel.app/_next/image?url=%2Fimages%2Fthe-coding-montana.png&w=1920&q=75"
                   loading="lazy"
-                  className="w-10"
+                  className="w-48 mx-auto"
                   alt="tailus logo"
                 />
-                <h2 className="mb-8 text-2xl font-bold text-gray-800">
-                  Sign in to unlock the <br />
-                  best of Tailus.
+                <h2 className="text-xl text-center font-bold text-gray-800">
+                  Welcome to the Chat App (React) <br />
                 </h2>
               </div>
-              <div className="mt-16 grid space-y-4">
+              <div className="mt-6 grid space-y-4">
                 <button className="group relative flex h-11 items-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-white before:border before:border-gray-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:bg-gray-300 disabled:before:scale-100">
-                  <span className="w-full relative flex justify-center items-center gap-3 text-base font-medium text-gray-600 dark:text-gray-200">
+                  <span className="w-full relative flex justify-center items-center gap-3 text-base font-medium text-gray-600">
                     <img
-                      src="images/google.svg"
+                      src="https://tailus.io/sources/blocks/social/preview/images/google.svg"
                       className="absolute left-0 w-5"
                       alt="google logo"
                     />
@@ -33,7 +30,7 @@ function App() {
                   </span>
                 </button>
                 <button className="group relative flex h-11 items-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-white before:border before:border-gray-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:bg-gray-300 disabled:before:scale-100">
-                  <span className="w-full relative flex justify-center items-center gap-3 text-base font-medium text-gray-600 dark:text-gray-200">
+                  <span className="w-full relative flex justify-center items-center gap-3 text-base font-medium text-gray-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -48,7 +45,7 @@ function App() {
                   </span>
                 </button>
                 <button className="group relative flex h-11 items-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-white before:border before:border-gray-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:bg-gray-300 disabled:before:scale-100">
-                  <span className="w-full relative flex justify-center items-center gap-3 text-base font-medium text-gray-600 dark:text-gray-200">
+                  <span className="w-full relative flex justify-center items-center gap-3 text-base font-medium text-gray-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
@@ -61,31 +58,6 @@ function App() {
                   </span>
                 </button>
               </div>
-
-              <div className="mt-32 space-y-4 text-center text-gray-600 sm:-mb-8">
-                <p className="text-xs">
-                  By proceeding, you agree to our{" "}
-                  <a href="#" className="underline">
-                    Terms of Use
-                  </a>{" "}
-                  and confirm you have read our
-                  <a href="#" className="underline">
-                    Privacy and Cookie Statement
-                  </a>
-                  .
-                </p>
-                <p className="text-xs">
-                  This site is protected by reCAPTCHA and the
-                  <a href="#" className="underline">
-                    Google Privacy Policy
-                  </a>{" "}
-                  and
-                  <a href="#" className="underline">
-                    Terms of Service
-                  </a>{" "}
-                  apply.
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -93,5 +65,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
