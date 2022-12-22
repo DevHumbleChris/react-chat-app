@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './views/Login'
+import Chat from './views/Chat'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Login />
+    element: <Chat />
   },
   {
     path: '/login',
