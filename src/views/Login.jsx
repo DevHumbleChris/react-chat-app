@@ -54,7 +54,7 @@ export default function Login() {
                   alt="the-coding-montana logo"
                 />
                 <h2 className="text-xl text-center font-bold text-gray-800">
-                  Welcome to the Group Chat App (React) <br />
+                  Welcome to the Group Chat App - React <br />
                 </h2>
               </div>
               <div className="mt-6 grid space-y-4 space-x-2">
