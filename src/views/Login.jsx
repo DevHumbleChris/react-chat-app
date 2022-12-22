@@ -1,19 +1,25 @@
-import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithPopup,
+} from "firebase/auth";
 import React, { useEffect } from "react";
 import { auth } from "../firebaseConfig";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setAuthentification } from "../store/slices/authSlice";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Login() {
   const navigate = useNavigate();
-  const dispatch = useDispatch()
-  const provider = new GoogleAuthProvider()
+  const dispatch = useDispatch();
+  const provider = new GoogleAuthProvider();
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (result) => {
       if (result) {
-        localStorage.setItem("authenticated", "true")
-        dispatch(setAuthentification())
+        localStorage.setItem("authenticated", "true");
+        toast.info("Login Successfully!");
+        dispatch(setAuthentification());
         navigate("/");
       }
     });
@@ -24,15 +30,17 @@ export default function Login() {
   }, []);
   const googleSignin = () => {
     signInWithPopup(auth, provider)
-      .then(result => {
-        console.log(result)
+      .then((result) => {
+        console.log(result);
       })
-      .catch(err => {
-        console.log(err.message)
-      })
-  }
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   return (
     <div className="relative py-16">
+      <ToastContainer />
+
       <div className="container relative m-auto px-6 text-gray-500 md:px-12 xl:px-40">
         <div className="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
           <div className="rounded-3xl border border-gray-100bg-white shadow-2xl shadow-gray-600/10">
@@ -49,7 +57,10 @@ export default function Login() {
                 </h2>
               </div>
               <div className="mt-6 grid space-y-4">
-                <button onClick={googleSignin} className="group relative flex h-11 items-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-white before:border before:border-gray-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:bg-gray-300 disabled:before:scale-100">
+                <button
+                  onClick={googleSignin}
+                  className="group relative flex h-11 items-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-white before:border before:border-gray-200 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 disabled:before:bg-gray-300 disabled:before:scale-100"
+                >
                   <span className="w-full relative flex justify-center items-center gap-3 text-base font-medium text-gray-600">
                     <img
                       src="https://tailus.io/sources/blocks/social/preview/images/google.svg"
