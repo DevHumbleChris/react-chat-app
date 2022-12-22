@@ -1,6 +1,21 @@
-import React from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import React, { useEffect } from "react";
+import { auth } from "../firebaseConfig";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (result) => {
+      if (result) {
+        navigate("/");
+      }
+    });
+
+    return () => {
+      unsub();
+    };
+  }, []);
   return (
     <div className="relative py-16">
       <div className="container relative m-auto px-6 text-gray-500 md:px-12 xl:px-40">
