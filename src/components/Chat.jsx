@@ -22,7 +22,7 @@ export default function Chat() {
   }, []);
   return (
     <>
-      <div className="flex flex-col p-[10px] relative">
+      <div className="flex flex-col relative h-[75vh] overflow-x-scroll">
         {messages.map((message) => (
           <Message key={message.id} message={message} />
         ))}
