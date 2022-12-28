@@ -19,7 +19,7 @@ export default function Home() {
 
   if (!authenticated) return <Navigate to="/login" replace />;
   return (
-    <div className="max-w-[720px] mt-2 mx-auto shadow-xl h-[90vh] relative">
+    <div className="max-w-[720px] mt-2 mx-auto shadow-xl h-screen sm:h-[90vh] relative">
       <ChatHeader />
       <Chat />
     </div>
